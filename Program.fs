@@ -13,7 +13,8 @@ namespace Exercises
       | 1 -> HelloWorld.hello
       | 2 -> MatchTest.test
       | 3 -> TestCowInterrogator.test
-      | 13 -> printfn "Deck -> %A "DeckTest.test
+      | 4 -> SeqTest.test
+      | 13 -> printfn "Deck -> %A" DeckTest.test
       | 22 ->
            let disposable = WebServer.Server.Start(port = 8090)
            Thread.Sleep(15000) // wait 15 sec to close server
