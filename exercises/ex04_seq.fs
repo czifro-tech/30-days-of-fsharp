@@ -15,11 +15,11 @@ namespace Exercises
       |> Seq.iter(fun x -> print x) // use a generic print function so that we can reuse printSeq anyway we like
       s // make sure to put s here otherwise a type unit will be returned
 
-    let filterSeq (f: int -> int -> bool) v (s: seq<int>) =
+    let filterSeq (f: int -> int -> bool) v (s: seq<int>) = // f is a function that takes two ints and returns a bool, like num1 > num2
       s
       |> Seq.filter(fun x -> f x v)
 
-    let appendToSeq (a: seq<int>) (s: seq<int>) =
+    let appendToSeq (a: seq<int>) (s: seq<int>) = // make seq that will be appended to second arg to allow for piping
       s
       |> Seq.append(a) 
 
@@ -31,7 +31,7 @@ namespace Exercises
 
     let chooseFirstColInTupleFromSeq (s: seq<int*int>) =
       s
-      |> Seq.choose(fun (x,_) -> Some x)
+      |> Seq.choose(fun (x,_) -> Some x) // use _ to ignore variable(s) in tuple
     
     let reduceSeq (s: seq<int>) =
       s

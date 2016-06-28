@@ -17,7 +17,7 @@ namespace Exercises
       |> Array.concat
 
     let shuffle (deck:(string*string)[]) =
-      let swap (a: _[]) x y =
+      let swap (a: _[]) x y = // _ used since type can be ignored
         let temp = a.[x]
         a.[x] <- a.[y]
         a.[y] <- temp

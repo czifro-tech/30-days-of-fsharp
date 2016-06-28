@@ -34,7 +34,7 @@ namespace Exercises
       let printLength l = (printfn "Length: %d" l)
       match arr with
       | [] -> printLength 0
-      | [ _ ] -> printLength 1
+      | [ _ ] -> printLength 1 // _ acts like a wildcard, used if you dont care about a var
       | [ _; _ ] -> printLength 2
       | _ -> arr |> List.length |> printLength
 

@@ -3,6 +3,7 @@
 
 namespace Exercises
 
+  open System
   open System.Threading
   open Exercises
 
@@ -17,17 +18,11 @@ namespace Exercises
       | 13 -> printfn "Deck -> %A" DeckTest.test
       | 22 ->
            let disposable = WebServer.Server.Start(port = 8090)
-           Thread.Sleep(15000) // wait 15 sec to close server
+           printfn "Enter a key to quit..."; Console.Read |> ignore // wait for keystroke to stop server
            disposable.Dispose()
       | _ -> failwithf "Invalid Option: %d. Valid Options are 1-30" op
 
     [<EntryPoint>]
     let main argv =
-        let adderGen num = (+) num
-        let num = adderGen 1 5
-        printfn "%d" num
-        let op (v:int) = (<) v
-        let b = op 5 6
-        printfn "%b" b
-        //exercise (int argv.[0])
+        exercise (int argv.[0])
         0 // return an integer exit code
