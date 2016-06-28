@@ -29,11 +29,6 @@ namespace Exercises
         (x,x)
       )
 
-    let printTuples (s: seq<int*int>) =
-      s
-      |> Seq.iter(fun (x,y) -> printfn "(%d,%d)" x y)
-      s
-
     let chooseFirstColInTupleFromSeq (s: seq<int*int>) =
       s
       |> Seq.choose(fun (x,_) -> Some x)
