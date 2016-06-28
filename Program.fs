@@ -11,7 +11,7 @@ namespace Exercises
     let exercise op =
       match op with
       | 1 -> HelloWorld.hello
-      | 2 -> printfn "Use NUnit to run tests"
+      | 2 -> MatchTest.test
       | 3 -> TestCowInterrogator.test
       | 13 -> printfn "Deck -> %A "DeckTest.test
       | 22 ->
@@ -22,5 +22,11 @@ namespace Exercises
 
     [<EntryPoint>]
     let main argv =
-        exercise (int argv.[0])
+        let adderGen num = (+) num
+        let num = adderGen 1 5
+        printfn "%d" num
+        let op (v:int) = (<) v
+        let b = op 5 6
+        printfn "%b" b
+        //exercise (int argv.[0])
         0 // return an integer exit code

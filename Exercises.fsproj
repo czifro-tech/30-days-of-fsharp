@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="exercises\ex01_hello_world.fs" />
-    <Compile Include="exercises\ex02_unit_testing.fs" />
+    <Compile Include="exercises\ex02_match_expression.fs" />
     <Compile Include="exercises\ex03_input_output.fs" />
     <Compile Include="exercises\ex13_cards_decks.fs" />
     <Compile Include="exercises\ex22_socket_server.fs" />

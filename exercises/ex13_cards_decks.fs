@@ -5,7 +5,6 @@ namespace Exercises
     let rand = new System.Random()
 
     let newDeck =
-      let mutable deck = [||]
       [|"Hearts";"Clubs";"Diamonds";"Spades"|]
       |> Seq.map(fun suit ->
         [|"2";"3";"4";"5";"6";"7";"8";"9";"10";"J";"Q";"K";"A"|]
@@ -14,8 +13,8 @@ namespace Exercises
         )
         |> Seq.toArray
       )
-      |> Seq.iter(fun row -> deck <- Array.append row deck)
-      deck
+      |> Seq.toArray
+      |> Array.concat
 
     let shuffle (deck:(string*string)[]) =
       let swap (a: _[]) x y =
