@@ -51,6 +51,7 @@
     <Compile Include="exercises\ex04_seq.fs" />
     <Compile Include="exercises\ex13_cards_decks.fs" />
     <Compile Include="exercises\ex22_socket_server.fs" />
+    <Compile Include="exercises\ex23_chat_client.fs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />

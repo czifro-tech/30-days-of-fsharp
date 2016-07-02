@@ -20,6 +20,22 @@ namespace Exercises
            let disposable = WebServer.Server.Start(port = 8090)
            printfn "Enter a key to quit..."; Console.Read |> ignore // wait for keystroke to stop server
            disposable.Dispose()
+      | 23 ->
+           printf "Enter 'S' to start as server or 'C' to start as client: "
+           let c = Console.ReadLine()
+           let mutable tTok = null : IDisposable
+           match c.ToLower() with
+           | "s" -> 
+                 tTok <- ChatClient.Session.createSession(false) 
+                 |> ChatClient.Session.runSession (ChatClient.ServerAndClient.receive) (ChatClient.ServerAndClient.send)
+           | "c" -> 
+                 tTok <- ChatClient.Session.createSession(true) 
+                 |> ChatClient.Session.runSession (ChatClient.ServerAndClient.send) (ChatClient.ServerAndClient.receive)
+           | _ -> failwithf "Invalid Option: %s" c
+           let ct = tTok
+           printfn "Running session for 120 sec"
+           Thread.Sleep(120*1000)
+           ct.Dispose()
       | _ -> failwithf "Invalid Option: %d. Valid Options are 1-30" op
 
     [<EntryPoint>]
