@@ -25,4 +25,3 @@ FSharpCollections.arrayFold [|(5,6);(7,8)|]
 FSharpCollections.listIncr [ for i in 0..9 -> i ]
 |> FSharpCollections.printCollection
 FSharpCollections.printCollection (seq { for i in 0..9 -> i })
-|> FSharpCollections.printCollection
