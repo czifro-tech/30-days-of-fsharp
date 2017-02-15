@@ -14,8 +14,4 @@ I am by no means an expert in F#. I am still learning the intricacies of F#. I w
 Running
 =======
 
-This was created using Xamarin, so it should work just fine in Visual Studio. You can then use VS to run this code. If you use mono, I have provided a make file to build, run, and debug the program.
-
-- `make build-debug` to build in debug mode
-- `make debugArgs [option]` to start debugger, then attach to process
-- `make runArgs [option]` to start without debugger and pass args to program. I know this is not good practice
+This simply requires F# Interactive. FSI can load in any `.fsx` file, F# script. This allows you to more quickly see how your code works. FSI also allows you to write F# in the terminal, `let myName = "Bob";;`. Note the `;;`. FSI uses this to know when you are finished entering in F# code. This means you can enter multiple lines of code before FSI executes it. To run these scripts, do `#load "<nameOfScript>"`.
