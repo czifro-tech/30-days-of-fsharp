@@ -7,7 +7,7 @@ tile cut game. Consider the following grids:
    WINW
    NNNI
    IIIN
-   WWwN
+   WWWN
 
    NINWN
    INIWI
@@ -17,7 +17,7 @@ tile cut game. Consider the following grids:
 
 The goal is to produce as many unique sequences of {W,I,N}.
 This can be done with network flow if the capacity of an 
-edge is set to one. This will gaurantee that no two
+edge is set to one. This will guarantee that no two
 sequences share the same letters.
 
 For the above grids, both should result in 5 unique 
@@ -288,4 +288,4 @@ let printAndSolve = NetworkFlow.Graph.constructGraph >> NetworkFlow.Graph.printG
 let solve = NetworkFlow.Graph.constructGraph >> NetworkFlow.Graph.getMaxFlow >> printResult
 let printGraph = NetworkFlow.Graph.constructGraph >> NetworkFlow.Graph.printG >> ignore
 
-rawGrids |> Array.iter( solve )
+rawGrids |> Array.iter( printGraph )
